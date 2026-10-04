@@ -1,0 +1,397 @@
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #10070b;
+    color: #f3e8d8;
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   COLORS
+========================= */
+
+:root {
+    --background: #10070b;
+    --burgundy: #641d34;
+    --gold: #d8b878;
+    --cream: #f3e8d8;
+    --muted: #b9a8a8;
+}
+
+
+/* =========================
+   GRAIN EFFECT
+========================= */
+
+.grain {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.035;
+
+    z-index: 100;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+    
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(100, 29, 52, 0.55),
+            transparent 38%
+        ),
+        linear-gradient(
+            160deg,
+            #17090f,
+            #090406
+        );
+}
+
+
+.hero-content {
+    max-width: 600px;
+
+    animation: heroAppear 1.4s ease forwards;
+}
+
+
+.eyebrow {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: var(--gold);
+
+    margin-bottom: 30px;
+}
+
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(64px, 18vw, 120px);
+
+    font-weight: 400;
+
+    line-height: 0.85;
+
+    letter-spacing: -4px;
+}
+
+
+.gold-line {
+    width: 60px;
+
+    height: 1px;
+
+    background: var(--gold);
+
+    margin: 35px auto;
+}
+
+
+.intro {
+    color: var(--muted);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 21px;
+
+    line-height: 1.6;
+
+    max-width: 430px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.continue-btn {
+    margin-top: 55px;
+
+    background: none;
+
+    border: none;
+
+    color: #8f7c82;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+}
+
+
+.continue-btn span {
+    display: block;
+
+    font-size: 18px;
+
+    margin-top: 10px;
+
+    color: var(--gold);
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-section {
+    padding: 100px 22px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #090406,
+            #16080e
+        );
+}
+
+
+.letter-card {
+    max-width: 680px;
+
+    margin: auto;
+
+    padding: 35px 25px;
+
+    border-radius: 22px;
+
+    border: 1px solid rgba(216, 184, 120, 0.18);
+
+    background:
+        rgba(255,255,255,0.025);
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,0.45);
+}
+
+
+.small-heading {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: var(--gold);
+
+    margin-bottom: 30px;
+}
+
+
+.letter-card h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    margin-bottom: 25px;
+}
+
+
+.letter-card p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+    line-height: 1.85;
+
+    color: #eadede;
+
+    margin-bottom: 22px;
+}
+
+
+.signature {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 28px;
+
+    font-style: italic;
+
+    color: var(--gold);
+
+    margin-top: 35px;
+}
+
+
+/* =========================
+   CLOSING
+========================= */
+
+.closing {
+    min-height: 90vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 60px 25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(100,29,52,.35),
+            transparent 50%
+        ),
+        #090406;
+}
+
+
+.closing-label {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: var(--gold);
+}
+
+
+.closing h2 {
+    max-width: 600px;
+
+    margin: 30px auto;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(38px, 9vw, 65px);
+
+    line-height: 1.1;
+
+    font-weight: 400;
+}
+
+
+.heart {
+    font-size: 24px;
+
+    color: var(--gold);
+
+    margin: 15px 0 25px;
+}
+
+
+.final-message {
+    color: var(--muted);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+}
+
+
+.date {
+    margin-top: 35px;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #76676c;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes heroAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 700px) {
+
+    .letter-card {
+        padding: 55px;
+    }
+
+    .letter-card p {
+        font-size: 21px;
+    }
+
+}
+/* Prevent text selection */
+body {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Keep the button clickable */
+button {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
